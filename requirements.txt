@@ -1,5 +1,5 @@
-flask
-pytelegrambotapi
+Flask==3.0.3
+pyTelegramBotAPI==4.14.0
 requests
 
 
