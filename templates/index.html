@@ -1,0 +1,303 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section id="hero" class="section hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1 class="hero-title">Ремонт холодильников с выездом — сегодня</h1>
+        <p class="hero-subtitle">Честные цены, фирменные комплектующие и гарантия до 12 месяцев.</p>
+        <div class="hero-actions">
+          <a href="#request" class="btn btn-primary">Оставить заявку</a>
+          <a href="#pricing" class="btn btn-ghost">Посмотреть цены</a>
+        </div>
+        <ul class="hero-bullets">
+          <li>Выезд мастера в течение 2 часов</li>
+          <li>Работаем по договору</li>
+          <li>Оплата по факту ремонта</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image-wrapper">
+          <img src="{{ url_for('static', filename='holo.png') }}" alt="Современный холодильник Samsung" class="hero-image" />
+          <div class="hero-image-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section features">
+    <div class="container">
+      <h2 class="section-title">Почему мы</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">Оперативно</h3>
+          <p class="feature-text">Выезд в день обращения. Большинство неисправностей устраняем за 1 визит.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🛡️</div>
+          <h3 class="feature-title">Гарантия</h3>
+          <p class="feature-text">До 12 месяцев на работы и запчасти. Официальные запчасти под вашу модель.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">💳</div>
+          <h3 class="feature-title">Честные цены</h3>
+          <p class="feature-text">Прозрачный прайс без скрытых доплат. Диагностика — бесплатно при ремонте.</p>
+        </div>
+      </div>
+      <div class="section-cta">
+        <a href="#request" class="btn btn-primary btn-shine">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="brands" class="section brands">
+    <div class="container">
+      <h2 class="section-title">Ремонтируем холодильники всех брендов</h2>
+      <p class="section-subtitle">Работаем с холодильниками всех ведущих производителей</p>
+      <div class="brands-grid">
+        <div class="brand-item">Samsung</div>
+        <div class="brand-item">LG</div>
+        <div class="brand-item">Bosch</div>
+        <div class="brand-item">Indesit</div>
+        <div class="brand-item">Beko</div>
+        <div class="brand-item">Electrolux</div>
+        <div class="brand-item">Zanussi</div>
+        <div class="brand-item">Whirlpool</div>
+        <div class="brand-item">Ariston</div>
+        <div class="brand-item">Candy</div>
+        <div class="brand-item">Haier</div>
+        <div class="brand-item">Liebherr</div>
+        <div class="brand-item">Stinol</div>
+        <div class="brand-item">Atlant</div>
+        <div class="brand-item">Nord</div>
+        <div class="brand-item">Polar</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section process">
+    <div class="container">
+      <h2 class="section-title">Как мы работаем</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-number">1</div>
+          <h3 class="process-title">Оставляете заявку</h3>
+          <p class="process-text">Заполните форму на сайте или позвоните нам. Наш менеджер уточнит детали и согласует удобное время визита мастера.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">2</div>
+          <h3 class="process-title">Выезд мастера</h3>
+          <p class="process-text">Мастер приезжает в течение 1-2 часов после заявки. Привозит все необходимые инструменты и запчасти.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">3</div>
+          <h3 class="process-title">Диагностика</h3>
+          <p class="process-text">Бесплатная диагностика на месте. Мастер определяет причину поломки и называет точную стоимость ремонта.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">4</div>
+          <h3 class="process-title">Ремонт</h3>
+          <p class="process-text">После согласования цены мастер выполняет ремонт. Используем только оригинальные запчасти.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">5</div>
+          <h3 class="process-title">Гарантия</h3>
+          <p class="process-text">Выдаём официальную гарантию до 12 месяцев. Оплата только после проверки результата.</p>
+        </div>
+      </div>
+      <div class="section-cta">
+        <a href="#request" class="btn btn-primary btn-shine">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section pricing">
+    <div class="container">
+      <h2 class="section-title">Прайс на комплектующие и работы</h2>
+      <div class="pricing-grid">
+        {% for row in pricing %}
+          <div class="price-card">
+            <h3 class="price-card-title">{{ row.component }}</h3>
+            <div class="price-card-price">
+              <span class="price-label">от</span>
+              <span class="price-value">{{ row.total_from }}&nbsp;₽</span>
+            </div>
+            {% if row.labor_from > 0 or row.part_from > 0 %}
+              <div class="price-card-details">
+                {% if row.labor_from > 0 %}
+                  <div class="price-detail">
+                    <span class="price-detail-label">Работа:</span>
+                    <span class="price-detail-value">от {{ row.labor_from }}&nbsp;₽</span>
+                  </div>
+                {% endif %}
+                {% if row.part_from > 0 %}
+                  <div class="price-detail">
+                    <span class="price-detail-label">Запчасть:</span>
+                    <span class="price-detail-value">от {{ row.part_from }}&nbsp;₽</span>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      <p class="price-note">Цены ориентировочные. Точная смета — после диагностики с учётом модели и состояния узлов.</p>
+      <div class="section-cta">
+        <a href="#request" class="btn btn-primary btn-shine">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section testimonials">
+    <div class="container">
+      <h2 class="section-title">Отзывы наших клиентов</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">А</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">Анна Петрова</div>
+              <div class="testimonial-date">15 января 2025</div>
+            </div>
+          </div>
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">Мастер приехал в течение часа, быстро диагностировал проблему с компрессором. Заменили запчасть, всё работает отлично. Цена была озвучена заранее, никаких доплат. Очень довольна!</p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">М</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">Михаил Соколов</div>
+              <div class="testimonial-date">12 января 2025</div>
+            </div>
+          </div>
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">Холодильник Samsung перестал морозить. Вызвал мастера, приехал в тот же день. Оказалось, проблема с системой NoFrost. Мастер всё починил, дал гарантию на год. Рекомендую!</p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">Е</div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">Елена Иванова</div>
+              <div class="testimonial-date">8 января 2025</div>
+            </div>
+          </div>
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">Очень вежливый и профессиональный мастер. Заменил уплотнитель на двери, холодильник снова работает как новый. Цены адекватные, работа качественная. Спасибо!</p>
+        </div>
+      </div>
+      <div class="section-cta">
+        <a href="#request" class="btn btn-primary btn-shine">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" class="section cases">
+    <div class="container">
+      <h2 class="section-title">Наши кейсы</h2>
+      <div class="cases-grid">
+        <div class="case">
+          <div class="case-icon">❄️</div>
+          <h3 class="case-title">Ремонт компрессора Samsung</h3>
+          <p class="case-description">Холодильник Samsung перестал морозить. Диагностика показала неисправность компрессора. Заменили на оригинальный, холодильник работает как новый.</p>
+          <div class="case-details">
+            <div class="case-detail">
+              <span class="case-detail-label">Модель:</span>
+              <span class="case-detail-value">Samsung RB37J5000SA</span>
+            </div>
+            <div class="case-detail">
+              <span class="case-detail-label">Срок ремонта:</span>
+              <span class="case-detail-value">2 часа</span>
+            </div>
+            <div class="case-detail">
+              <span class="case-detail-label">Гарантия:</span>
+              <span class="case-detail-value">12 месяцев</span>
+            </div>
+          </div>
+        </div>
+        <div class="case">
+          <div class="case-icon">🔧</div>
+          <h3 class="case-title">Замена системы NoFrost</h3>
+          <p class="case-description">Холодильник Bosch намерзал лёд, система NoFrost не работала. Мастер заменил испаритель и термостат. Проблема решена полностью.</p>
+          <div class="case-details">
+            <div class="case-detail">
+              <span class="case-detail-label">Модель:</span>
+              <span class="case-detail-value">Bosch KGN39VW25R</span>
+            </div>
+            <div class="case-detail">
+              <span class="case-detail-label">Срок ремонта:</span>
+              <span class="case-detail-value">3 часа</span>
+            </div>
+            <div class="case-detail">
+              <span class="case-detail-label">Гарантия:</span>
+              <span class="case-detail-value">12 месяцев</span>
+            </div>
+          </div>
+        </div>
+        <div class="case">
+          <div class="case-icon">⚡</div>
+          <h3 class="case-title">Ремонт электроники Indesit</h3>
+          <p class="case-description">Холодильник Indesit не включался, мигала индикация. Диагностика выявила проблему с блоком управления. Заменили плату, холодильник заработал.</p>
+          <div class="case-details">
+            <div class="case-detail">
+              <span class="case-detail-label">Модель:</span>
+              <span class="case-detail-value">Indesit ITF 118 W</span>
+            </div>
+            <div class="case-detail">
+              <span class="case-detail-label">Срок ремонта:</span>
+              <span class="case-detail-value">1.5 часа</span>
+            </div>
+            <div class="case-detail">
+              <span class="case-detail-label">Гарантия:</span>
+              <span class="case-detail-value">12 месяцев</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-cta">
+        <a href="#request" class="btn btn-primary btn-shine">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="request" class="section request">
+    <div class="container">
+      <h2 class="section-title">Оставить заявку</h2>
+      <form id="requestForm" class="form card" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Ваше имя*</label>
+            <input id="name" name="name" type="text" placeholder="Иван" required />
+            <div class="hint">Обязательное поле</div>
+          </div>
+          <div class="form-field">
+            <label for="phone">Телефон*</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (___) ___‑__‑__" required />
+            <div class="hint">Для связи с мастером</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="brand">Бренд / модель</label>
+            <input id="brand" name="brand" type="text" placeholder="Samsung, Bosch, Indesit..." />
+          </div>
+          <div class="form-field">
+            <label for="preferred_time">Удобное время</label>
+            <input id="preferred_time" name="preferred_time" type="text" placeholder="Сегодня после 18:00" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="problem">Кратко опишите проблему</label>
+          <textarea id="problem" name="problem" rows="4" placeholder="Не морозит, странные звуки, мигает индикация..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">Отправить заявку</button>
+          <div class="form-policy">Нажимая «Отправить», вы соглашаетесь с обработкой персональных данных.</div>
+        </div>
+      </form>
+    </div>
+  </section>
+{% endblock %}
+
+

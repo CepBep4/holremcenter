@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block body_class %}about-page{% endblock %}
+
+{% block content %}
+  <section class="section about">
+    <div class="container">
+      <h1 class="section-title">О нас</h1>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="about-subtitle">ХолРемЦентр — профессиональный ремонт холодильников в Москве</h2>
+          
+          <p>Мы работаем на рынке ремонта бытовой техники уже более 10 лет. За это время мы помогли тысячам клиентов вернуть к жизни их холодильники и сэкономить на покупке новой техники.</p>
+          
+          <h3 class="about-heading">Почему выбирают нас:</h3>
+          <ul class="about-list">
+            <li><strong>Опытные мастера</strong> — наши специалисты имеют многолетний опыт работы с холодильниками всех брендов</li>
+            <li><strong>Оригинальные запчасти</strong> — используем только фирменные комплектующие с гарантией качества</li>
+            <li><strong>Быстрый выезд</strong> — мастер приезжает в течение 1-2 часов после заявки</li>
+            <li><strong>Честные цены</strong> — прозрачный прайс без скрытых доплат, диагностика бесплатно при ремонте</li>
+            <li><strong>Гарантия до 12 месяцев</strong> — на все виды работ и установленные запчасти</li>
+            <li><strong>Работаем по договору</strong> — официальные документы и гарантийные обязательства</li>
+          </ul>
+          
+          <h3 class="about-heading">Наши услуги:</h3>
+          <p>Мы ремонтируем холодильники всех ведущих производителей: Samsung, LG, Bosch, Indesit, Beko, Electrolux, Zanussi, Whirlpool, Ariston, Candy, Haier, Liebherr, Stinol, Atlant, Nord, Polar и другие.</p>
+          
+          <p>Выполняем ремонт любой сложности: от замены уплотнителя до ремонта компрессора и платы управления. Большинство неисправностей устраняем за один визит.</p>
+        </div>
+        
+        <div class="about-map">
+          <h2 class="about-subtitle">Наш офис</h2>
+          <p class="map-description">Мы находимся на краю Москвы, что позволяет нам быстро добираться до клиентов в любой части города.</p>
+          <div class="map-container">
+            <iframe 
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3A1234567890abcdef&amp;source=constructor" 
+              width="100%" 
+              height="400" 
+              frameborder="0"
+              style="border-radius: 16px;"
+              loading="lazy">
+            </iframe>
+          </div>
+          <div class="map-address">
+            <p><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 1</p>
+            <p><strong>Ближайшее метро:</strong> Примерная (5 минут пешком)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+

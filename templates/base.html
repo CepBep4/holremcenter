@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ремонт холодильников с выездом на дом в Москве. Оперативно, с гарантией до 12 месяцев и прозрачными ценами. Все бренды: Samsung, LG, Bosch, Indesit, Beko и другие." />
+    <meta name="keywords" content="ремонт холодильников, ремонт холодильников москва, ремонт холодильников на дому, мастер по ремонту холодильников, ремонт холодильников samsung, ремонт холодильников lg, ремонт холодильников выезд, ремонт холодильников срочно, холремцентр" />
+    <meta name="author" content="ХолРемЦентр" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Russian" />
+    <meta name="geo.region" content="RU-MOW" />
+    <meta name="geo.placename" content="Москва" />
+    <meta name="geo.position" content="55.7558;37.6173" />
+    <meta name="ICBM" content="55.7558, 37.6173" />
+    
+    <!-- Yandex Meta Tags -->
+    <meta name="yandex-verification" content="" />
+    <meta name="yandex" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://holremcenter.sever-web.ru/" />
+    <meta property="og:title" content="Ремонт холодильников — ХолРемЦентр" />
+    <meta property="og:description" content="Ремонт холодильников с выездом на дом в Москве. Оперативно, с гарантией до 12 месяцев и прозрачными ценами." />
+    <meta property="og:image" content="https://holremcenter.sever-web.ru/static/holo.png" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="ХолРемЦентр" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://holremcenter.sever-web.ru/" />
+    <meta name="twitter:title" content="Ремонт холодильников — ХолРемЦентр" />
+    <meta name="twitter:description" content="Ремонт холодильников с выездом на дом в Москве. Оперативно, с гарантией до 12 месяцев и прозрачными ценами." />
+    <meta name="twitter:image" content="https://holremcenter.sever-web.ru/static/holo.png" />
+    
+    <!-- Mobile -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="ХолРемЦентр" />
+    <meta name="theme-color" content="#0693e3" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://holremcenter.sever-web.ru/" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='icon.svg') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='android-chrome-192x192.png') }}" />
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='android-chrome-512x512.png') }}" />
+    
+    <title>Ремонт холодильников — ХолРемЦентр</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body{% if body_class is defined %} class="{{ body_class }}"{% endif %}>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand">
+          <span class="brand-mark" aria-hidden="true">❄</span>
+          <span class="brand-name">ХолРемЦентр</span>
+        </a>
+        <nav class="nav">
+          <a href="/#services" class="nav-link">Услуги</a>
+          <a href="/#pricing" class="nav-link">Цены</a>
+          <a href="/about" class="nav-link nav-about">О нас</a>
+          <a href="/contacts" class="nav-link">Контакты</a>
+          <a href="/#request" class="nav-link nav-cta">Заявка</a>
+        </nav>
+      </div>
+    </header>
+    <div class="phone-bar">
+      <div class="container">
+        <a href="tel:+79829815504" class="phone-bar-link">
+          <span class="phone-icon">📞</span>
+          <span class="phone-number">+7 (982) 981-55-04</span>
+        </a>
+      </div>
+    </div>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="brand brand--small">
+            <span class="brand-mark" aria-hidden="true">❄</span>
+            <span class="brand-name">ХолРемЦентр</span>
+          </div>
+          <div class="meta">© {{  (now() if false) or  '' }} {{ '2025' }} ХолРемЦентр. Все права защищены.</div>
+        </div>
+        <nav class="footer-nav">
+          <a href="/#services" class="footer-link">Услуги</a>
+          <span class="footer-separator">|</span>
+          <a href="/#pricing" class="footer-link">Цены</a>
+          <span class="footer-separator">|</span>
+          <a href="/about" class="footer-link">О нас</a>
+          <span class="footer-separator">|</span>
+          <a href="/contacts" class="footer-link">Контакты</a>
+        </nav>
+        <div class="footer-right">
+          <a href="tel:+79829815504" class="phone">+7 (982) 981-55-04</a>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+    
+
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ХолРемЦентр",
+      "description": "Ремонт холодильников с выездом на дом в Москве. Оперативно, с гарантией до 12 месяцев и прозрачными ценами.",
+      "url": "https://holremcenter.sever-web.ru",
+      "telephone": "+79829815504",
+      "priceRange": "от 1000 руб.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Москва",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "55.7558",
+        "longitude": "37.6173"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Москва"
+      },
+      "serviceType": "Ремонт холодильников",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Услуги по ремонту холодильников",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ремонт компрессора холодильника",
+              "description": "Ремонт и замена компрессора холодильника"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ремонт платы управления холодильника",
+              "description": "Ремонт и замена платы управления холодильника"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Диагностика холодильника",
+              "description": "Бесплатная диагностика холодильника при ремонте"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+  </body>
+  </html>
+
+
